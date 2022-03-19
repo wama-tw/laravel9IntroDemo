@@ -22,7 +22,15 @@ Route::get('/choose', function () {
     return view('choose');
 });
 
-Route::resource('course', CourseController::class);
+Route::controller(CourseController::class)->group(function () {
+    Route::get('/course', 'index');
+    Route::post('/course', 'store');
+    Route::get('/course/create', 'create');
+    // Route::get('/course/{course}', 'show');
+    // Route::post('/course/{course}', 'update');
+    // Route::delete('/course/{course}', 'destroy');
+    // Route::get('/course/{course}/edit', 'edit');
+});
 
 Route::get('/123', function () {
     return view('welcome');
