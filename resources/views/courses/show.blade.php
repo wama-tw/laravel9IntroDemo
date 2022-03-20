@@ -14,6 +14,7 @@
 
     <div>
         <br>
+        <a href="{{ route('course.edit', ['course' => $course->id]) }}">修改課程資料</a>
         <a href="{{ route('course.index') }}">回課程列表</a>
     </div>
 @endsection
