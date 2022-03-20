@@ -14,7 +14,7 @@ class CourseController extends Controller
      */
     public function index()
     {
-        return view('index', ['courses' => Course::orderBy('credit', 'asc')->get()]);
+        return view('courses.index', ['courses' => Course::orderBy('credit', 'asc')->get()]);
     }
 
     /**
@@ -24,7 +24,7 @@ class CourseController extends Controller
      */
     public function create()
     {
-        return view('create');
+        return view('courses.create');
     }
 
     /**
@@ -41,19 +41,19 @@ class CourseController extends Controller
         $course->credit = $request->input('credit');
         $course->intro = $request->input('intro');
         $course->save();
-        
+
         return redirect()->route('course.index');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param  Course $course
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Course $course)
     {
-        //
+        return view('courses.show', ['course' => $course]);
     }
 
     /**
