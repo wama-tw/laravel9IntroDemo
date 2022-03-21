@@ -42,7 +42,7 @@ class CourseController extends Controller
         $course->intro = $request->input('intro');
         $course->save();
 
-        return redirect()->route('course.index');
+        return redirect()->route('courses.index');
     }
 
     /**
@@ -84,7 +84,7 @@ class CourseController extends Controller
 
         $course->update($newCourse);
 
-        return redirect()->route('course.show', ['course' => $course->id]);
+        return redirect()->route('courses.show', ['course' => $course->id]);
     }
 
     /**
@@ -99,6 +99,6 @@ class CourseController extends Controller
 
         $courses = Course::orderBy('credit', 'asc')->get();
 
-        return redirect()->route('course.index');
+        return redirect()->route('courses.index');
     }
 }

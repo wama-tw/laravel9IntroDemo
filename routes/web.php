@@ -23,13 +23,13 @@ Route::get('/choose', function () {
 });
 
 Route::controller(CourseController::class)->group(function () {
-    Route::get('/course', 'index')->name('course.index');
-    Route::post('/course', 'store')->name('course.store');
-    Route::get('/course/create', 'create')->name('course.create');
-    Route::get('/course/{course}', 'show')->name('course.show');
-    Route::put('/course/{course}', 'update')->name('course.update');
-    Route::delete('/course/{course}', 'destroy')->name('course.destroy');
-    Route::get('/course/{course}/edit', 'edit')->name('course.edit');
+    Route::get('/courses', 'index')->name('courses.index');
+    Route::post('/courses', 'store')->name('courses.store');
+    Route::get('/courses/create', 'create')->name('courses.create');
+    Route::get('/courses/{course}', 'show')->name('courses.show');
+    Route::put('/courses/{course}', 'update')->name('courses.update');
+    Route::delete('/courses/{course}', 'destroy')->name('courses.destroy');
+    Route::get('/courses/{course}/edit', 'edit')->name('courses.edit');
 });
 
 Route::get('/123', function () {

@@ -14,12 +14,12 @@
 
     <div>
         <br>
-        <form action="{{ route('course.destroy', ['course' => $course->id]) }}" method="POST">
+        <form action="{{ route('courses.destroy', ['course' => $course->id]) }}" method="POST">
             @method('delete')
             @csrf
             <input type="submit" value="刪除此課程">
         </form>
-        <a href="{{ route('course.edit', ['course' => $course->id]) }}">修改課程資料</a>
-        <a href="{{ route('course.index') }}">回課程列表</a>
+        <a href="{{ route('courses.edit', ['course' => $course->id]) }}">修改課程資料</a>
+        <a href="{{ route('courses.index') }}">回課程列表</a>
     </div>
 @endsection
