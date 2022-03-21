@@ -99,6 +99,6 @@ class CourseController extends Controller
 
         $courses = Course::orderBy('credit', 'asc')->get();
 
-        return redirect()->route('course.index', ['courses' => $courses]);
+        return redirect()->route('course.index');
     }
 }
