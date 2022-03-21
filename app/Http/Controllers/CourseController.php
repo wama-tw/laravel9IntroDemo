@@ -71,12 +71,20 @@ class CourseController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param  Course $course
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Course $course)
     {
-        //
+        $newCourse = [
+            'title' => $request->input('title'),
+            'credit' => $request->input('credit'),
+            'intro' => $request->input('intro')
+        ];
+
+        $course->update($newCourse);
+
+        return redirect()->route('course.show', ['course' => $course->id]);
     }
 
     /**
